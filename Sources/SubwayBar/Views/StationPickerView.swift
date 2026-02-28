@@ -1,19 +1,21 @@
 import SwiftUI
 
-// Searchable station list for picking a station
+// Searchable station list, filtered by route
 struct StationPickerView: View {
     @ObservedObject var stationStore = StationStore.shared
     @State private var searchText = ""
+
+    let route: String
     let onSelect: (Station) -> Void
 
     private var filteredStations: [Station] {
-        stationStore.search(query: searchText)
+        stationStore.search(query: searchText, route: route)
     }
 
     var body: some View {
         VStack(spacing: 0) {
             // Search field
-            HStack {
+            HStack(spacing: 8) {
                 Image(systemName: "magnifyingglass")
                     .foregroundColor(.secondary)
                 TextField("Search stations...", text: $searchText)
@@ -28,39 +30,66 @@ struct StationPickerView: View {
                     .buttonStyle(.plain)
                 }
             }
-            .padding(8)
+            .padding(10)
             .background(Color(nsColor: .controlBackgroundColor))
             .cornerRadius(8)
             .padding(.horizontal, 12)
             .padding(.top, 8)
+            .padding(.bottom, 4)
+
+            // Station count
+            Text("\(filteredStations.count) stations on the \(route) line")
+                .font(.caption)
+                .foregroundColor(.secondary)
+                .padding(.vertical, 4)
 
             // Station list
-            List(filteredStations) { station in
-                Button(action: {
-                    onSelect(station)
-                }) {
-                    HStack {
-                        // Show route bullets for this station
-                        HStack(spacing: 2) {
-                            ForEach(station.inferredRoutes, id: \.self) { route in
-                                SubwayIcon.BulletView(route: route, size: 16)
+            ScrollView {
+                LazyVStack(spacing: 0) {
+                    ForEach(filteredStations) { station in
+                        Button(action: {
+                            onSelect(station)
+                        }) {
+                            HStack(spacing: 10) {
+                                SubwayIcon.BulletView(route: route, size: 20)
+
+                                Text(station.name)
+                                    .font(.body)
+                                    .lineLimit(1)
+
+                                Spacer()
                             }
+                            .padding(.horizontal, 14)
+                            .padding(.vertical, 12)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .contentShape(Rectangle())
                         }
-                        .frame(minWidth: 40, alignment: .leading)
+                        .buttonStyle(HighlightButtonStyle())
 
-                        Text(station.name)
-                            .font(.body)
-
-                        Spacer()
-
-                        Image(systemName: "chevron.right")
-                            .font(.caption)
-                            .foregroundColor(.secondary)
+                        if station.id != filteredStations.last?.id {
+                            Divider()
+                                .padding(.leading, 44)
+                        }
                     }
-                    .contentShape(Rectangle())
                 }
-                .buttonStyle(.plain)
             }
         }
     }
+}
+
+// A button style that highlights the full row on hover/press
+struct HighlightButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .background(
+                configuration.isPressed
+                    ? Color(nsColor: .selectedContentBackgroundColor).opacity(0.3)
+                    : Color.clear
+            )
+    }
+}
+
+// Helper to use NSColor as SwiftUI Color
+extension Color {
+    static let tertiaryLabelColor = Color(nsColor: .tertiaryLabelColor)
 }
