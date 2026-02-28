@@ -244,6 +244,13 @@ struct ArrivalView: View {
 
             Spacer()
 
+            Button(action: { AboutWindow.show() }) {
+                Image(systemName: "info.circle")
+                    .font(.system(size: 12))
+                    .foregroundColor(.secondary)
+            }
+            .buttonStyle(.plain)
+
             Button(action: onOpenSettings) {
                 Image(systemName: "gear")
                     .font(.system(size: 12))
