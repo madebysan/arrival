@@ -53,7 +53,7 @@ private struct AboutContentView: View {
                 .frame(width: 96, height: 96)
 
             // App name
-            Text("SubwayBar")
+            Text("Arrival")
                 .font(.title2)
                 .fontWeight(.semibold)
 

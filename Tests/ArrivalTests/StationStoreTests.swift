@@ -1,5 +1,5 @@
 import XCTest
-@testable import SubwayBar
+@testable import Arrival
 
 final class StationStoreTests: XCTestCase {
 

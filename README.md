@@ -1,17 +1,21 @@
 <p align="center">
-  <img src="assets/app-icon.png" width="128" height="128" alt="SubwayBar app icon">
+  <img src="assets/app-icon.png" width="128" height="128" alt="Arrival app icon">
 </p>
-<h1 align="center">SubwayBar</h1>
+<h1 align="center">Arrival</h1>
 <p align="center">Real-time NYC subway arrivals in your menu bar.<br>
-Click to see the next trains. No polling, no clutter.</p>
+Never miss your train.</p>
 <p align="center"><strong>Version 1.0.0</strong> · macOS 13+ · Apple Silicon & Intel</p>
-<p align="center"><a href="https://github.com/madebysan/subway-bar/releases/latest"><strong>Download SubwayBar</strong></a></p>
+<p align="center"><a href="https://github.com/madebysan/arrival/releases/latest"><strong>Download Arrival</strong></a></p>
 
 ---
 
+<p align="center">
+  <img src="assets/screenshot.png" width="720" alt="Arrival app screenshots showing line picker, direction picker, station picker, and live arrivals">
+</p>
+
 ## What it does
 
-SubwayBar sits in your macOS menu bar as a colored subway bullet icon. Click it to instantly see:
+Arrival sits in your macOS menu bar as a colored subway bullet icon. Click it to instantly see:
 
 - **Next trains** at your station with live countdowns
 - **Service alerts** for your line (delays, planned work)
@@ -30,7 +34,7 @@ Data comes directly from the MTA's free GTFS-Realtime feeds — the same source 
 
 ## Setup
 
-1. Open SubwayBar — the icon appears in your menu bar
+1. Open Arrival — the icon appears in your menu bar
 2. Click the gear icon to open settings
 3. Pick your subway line → direction → station
 4. Set your walking time (optional)
@@ -40,17 +44,17 @@ Data comes directly from the MTA's free GTFS-Realtime feeds — the same source 
 
 ### Download (recommended)
 
-1. Download `SubwayBar.dmg` from the [latest release](https://github.com/madebysan/subway-bar/releases/latest)
-2. Open the DMG and drag SubwayBar to Applications
+1. Download `Arrival.dmg` from the [latest release](https://github.com/madebysan/arrival/releases/latest)
+2. Open the DMG and drag Arrival to Applications
 3. Launch from Applications (right-click → Open on first launch if needed)
 
 ### Build from source
 
 ```bash
-git clone https://github.com/madebysan/subway-bar.git
-cd subway-bar
+git clone https://github.com/madebysan/arrival.git
+cd arrival
 swift build -c release
-# The binary is at .build/release/SubwayBar
+# The binary is at .build/release/Arrival
 ```
 
 ## Tech Stack

@@ -1,7 +1,7 @@
 import SwiftUI
 
 @main
-struct SubwayBarApp: App {
+struct ArrivalApp: App {
     @ObservedObject private var settings = SettingsManager.shared
 
     var body: some Scene {
