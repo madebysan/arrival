@@ -106,4 +106,17 @@ class StationStore: ObservableObject {
     func station(byID id: String) -> Station? {
         return stations.first { $0.id == id }
     }
+
+    // Get all stations that serve a given route
+    func stations(forRoute route: String) -> [Station] {
+        return stations.filter { $0.inferredRoutes.contains(route) }
+    }
+
+    // Search stations that serve a given route
+    func search(query: String, route: String) -> [Station] {
+        let routeStations = stations(forRoute: route)
+        if query.isEmpty { return routeStations }
+        let lowered = query.lowercased()
+        return routeStations.filter { $0.name.lowercased().contains(lowered) }
+    }
 }

@@ -8,7 +8,8 @@ struct ArrivalView: View {
     @State private var isLoading = false
     @State private var errorMessage: String?
     @State private var lastUpdated: Date?
-    @State private var showSettings = false
+
+    var onOpenSettings: () -> Void
 
     // Timer to refresh the countdown display every 15 seconds
     let refreshTimer = Timer.publish(every: 15, on: .main, in: .common).autoconnect()
@@ -52,10 +53,6 @@ struct ArrivalView: View {
             if let last = lastUpdated, Date().timeIntervalSince(last) > 60 {
                 Task { await refreshData() }
             }
-        }
-        .sheet(isPresented: $showSettings) {
-            SettingsView()
-                .frame(width: 400, height: 500)
         }
     }
 
@@ -247,7 +244,7 @@ struct ArrivalView: View {
 
             Spacer()
 
-            Button(action: { showSettings = true }) {
+            Button(action: onOpenSettings) {
                 Image(systemName: "gear")
                     .font(.system(size: 12))
                     .foregroundColor(.secondary)

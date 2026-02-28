@@ -1,33 +1,40 @@
 import SwiftUI
 
-// Settings view with station picker, direction, and walking time
+// Settings view: Line → Direction → Station (+ walking time)
 struct SettingsView: View {
     @ObservedObject var settings = SettingsManager.shared
-    @Environment(\.dismiss) var dismiss
+    var onDone: () -> Void
 
-    @State private var selectedStation: Station?
     @State private var selectedRoute: String = ""
     @State private var selectedDirection: String = "N"
+    @State private var selectedStation: Station?
     @State private var walkingTime: Int = 5
-    @State private var step: SettingsStep = .stationPicker
+    @State private var step: SettingsStep = .linePicker
 
     enum SettingsStep {
-        case stationPicker
-        case routePicker
+        case linePicker
         case directionPicker
+        case stationPicker
     }
 
     var body: some View {
         VStack(spacing: 0) {
             // Title bar
             HStack {
-                Button(action: goBack) {
-                    Image(systemName: "chevron.left")
-                        .font(.system(size: 14, weight: .medium))
+                if step != .linePicker {
+                    Button(action: goBack) {
+                        HStack(spacing: 4) {
+                            Image(systemName: "chevron.left")
+                                .font(.system(size: 12, weight: .semibold))
+                            Text("Back")
+                                .font(.subheadline)
+                        }
+                    }
+                    .buttonStyle(.plain)
+                    .foregroundColor(.accentColor)
+                } else {
+                    Spacer().frame(width: 60)
                 }
-                .buttonStyle(.plain)
-                .opacity(step != .stationPicker ? 1 : 0)
-                .disabled(step == .stationPicker)
 
                 Spacer()
 
@@ -37,26 +44,27 @@ struct SettingsView: View {
                 Spacer()
 
                 Button("Done") {
-                    dismiss()
+                    onDone()
                 }
                 .buttonStyle(.plain)
                 .foregroundColor(.accentColor)
+                .frame(width: 60, alignment: .trailing)
             }
             .padding(.horizontal, 12)
-            .padding(.vertical, 8)
+            .padding(.vertical, 10)
 
             Divider()
 
             // Content based on step
             switch step {
-            case .stationPicker:
-                stationPickerContent
-
-            case .routePicker:
-                routePickerContent
+            case .linePicker:
+                linePickerContent
 
             case .directionPicker:
-                directionAndWalkingContent
+                directionPickerContent
+
+            case .stationPicker:
+                stationPickerContent
             }
         }
         .onAppear {
@@ -66,128 +74,190 @@ struct SettingsView: View {
 
     private var titleForStep: String {
         switch step {
-        case .stationPicker:
-            return "Pick a Station"
-        case .routePicker:
+        case .linePicker:
             return "Pick a Line"
         case .directionPicker:
-            return "Direction & Settings"
+            return "Pick Direction"
+        case .stationPicker:
+            return "Pick a Station"
         }
     }
 
-    // MARK: - Station Picker
+    // MARK: - Line Picker (grid of subway bullets)
 
-    private var stationPickerContent: some View {
-        StationPickerView { station in
-            selectedStation = station
-            let routes = station.inferredRoutes
-            if routes.count == 1 {
-                // Only one route, skip route picker
-                selectedRoute = routes[0]
-                step = .directionPicker
-            } else {
-                step = .routePicker
-            }
-        }
-    }
+    // All subway lines grouped by color family
+    private let lineGroups: [[String]] = [
+        ["1", "2", "3"],           // Red
+        ["4", "5", "6"],           // Green
+        ["7"],                     // Purple
+        ["A", "C", "E"],           // Blue
+        ["B", "D", "F", "M"],      // Orange
+        ["G"],                     // Light green
+        ["J", "Z"],                // Brown
+        ["L"],                     // Gray
+        ["N", "Q", "R", "W"],      // Yellow
+        ["S"],                     // Shuttle
+    ]
 
-    // MARK: - Route Picker
-
-    private var routePickerContent: some View {
-        VStack(spacing: 0) {
-            if let station = selectedStation {
-                Text(station.name)
+    private var linePickerContent: some View {
+        ScrollView {
+            VStack(spacing: 16) {
+                Text("Which train do you ride?")
                     .font(.subheadline)
                     .foregroundColor(.secondary)
-                    .padding(.top, 8)
+                    .padding(.top, 12)
 
-                List(station.inferredRoutes, id: \.self) { route in
-                    Button(action: {
-                        selectedRoute = route
-                        step = .directionPicker
-                    }) {
-                        HStack {
-                            SubwayIcon.BulletView(route: route, size: 28)
-                            Text("\(route) train")
-                                .font(.body)
-                            Spacer()
-                            Image(systemName: "chevron.right")
-                                .font(.caption)
-                                .foregroundColor(.secondary)
+                // Grid of line buttons grouped by color
+                ForEach(lineGroups, id: \.self) { group in
+                    HStack(spacing: 10) {
+                        ForEach(group, id: \.self) { route in
+                            Button(action: {
+                                selectedRoute = route
+                                step = .directionPicker
+                            }) {
+                                SubwayIcon.BulletView(route: route, size: 44)
+                            }
+                            .buttonStyle(.plain)
+                            .frame(width: 52, height: 52)
+                            .contentShape(Rectangle())
                         }
-                        .contentShape(Rectangle())
                     }
-                    .buttonStyle(.plain)
                 }
+
+                Spacer().frame(height: 8)
             }
+            .frame(maxWidth: .infinity)
+            .padding(.horizontal, 16)
         }
     }
 
-    // MARK: - Direction & Walking Time
+    // MARK: - Direction Picker
 
-    private var directionAndWalkingContent: some View {
+    private var directionPickerContent: some View {
         VStack(spacing: 16) {
-            if let station = selectedStation {
-                // Current selection summary
+            // Show selected line
+            HStack(spacing: 8) {
+                SubwayIcon.BulletView(route: selectedRoute, size: 36)
+                Text("\(selectedRoute) train")
+                    .font(.title3)
+                    .fontWeight(.medium)
+            }
+            .padding(.top, 16)
+
+            Text("Which direction?")
+                .font(.subheadline)
+                .foregroundColor(.secondary)
+
+            // Two big direction buttons
+            VStack(spacing: 10) {
+                directionButton(
+                    direction: "N",
+                    title: "Uptown / Manhattan",
+                    subtitle: "Northbound",
+                    icon: "arrow.up"
+                )
+
+                directionButton(
+                    direction: "S",
+                    title: "Downtown / Brooklyn",
+                    subtitle: "Southbound",
+                    icon: "arrow.down"
+                )
+            }
+            .padding(.horizontal, 16)
+
+            // Walking time section
+            Divider()
+                .padding(.top, 8)
+
+            VStack(alignment: .leading, spacing: 8) {
+                Text("Walking Time")
+                    .font(.subheadline)
+                    .fontWeight(.medium)
+                    .foregroundColor(.secondary)
+
                 HStack {
-                    SubwayIcon.BulletView(route: selectedRoute, size: 28)
-                    Text(station.name)
-                        .font(.headline)
-                }
-                .padding(.top, 12)
-
-                // Direction picker
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("Direction")
-                        .font(.subheadline)
-                        .fontWeight(.medium)
-                        .foregroundColor(.secondary)
-
-                    Picker("Direction", selection: $selectedDirection) {
-                        if station.northStopID != nil {
-                            Text("Uptown / Manhattan-bound").tag("N")
+                    Text("Minutes to station:")
+                        .font(.body)
+                    Spacer()
+                    HStack(spacing: 0) {
+                        Button(action: { if walkingTime > 0 { walkingTime -= 1 } }) {
+                            Image(systemName: "minus.circle.fill")
+                                .font(.title3)
+                                .foregroundColor(.secondary)
                         }
-                        if station.southStopID != nil {
-                            Text("Downtown / Brooklyn-bound").tag("S")
+                        .buttonStyle(.plain)
+
+                        Text("\(walkingTime)")
+                            .font(.system(.title3, design: .rounded))
+                            .fontWeight(.medium)
+                            .frame(width: 36)
+                            .multilineTextAlignment(.center)
+
+                        Button(action: { if walkingTime < 30 { walkingTime += 1 } }) {
+                            Image(systemName: "plus.circle.fill")
+                                .font(.title3)
+                                .foregroundColor(.secondary)
                         }
+                        .buttonStyle(.plain)
                     }
-                    .pickerStyle(.radioGroup)
                 }
-                .padding(.horizontal, 20)
 
-                Divider()
+                Text("Trains arriving within \(walkingTime) min will show \"Leave now!\"")
+                    .font(.caption)
+                    .foregroundColor(.secondary)
+            }
+            .padding(.horizontal, 20)
 
-                // Walking time
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("Walking Time")
-                        .font(.subheadline)
+            Spacer()
+        }
+    }
+
+    private func directionButton(direction: String, title: String, subtitle: String, icon: String) -> some View {
+        Button(action: {
+            selectedDirection = direction
+            settings.walkingTimeMinutes = walkingTime
+            step = .stationPicker
+        }) {
+            HStack(spacing: 12) {
+                Image(systemName: icon)
+                    .font(.title2)
+                    .foregroundColor(.white)
+                    .frame(width: 40, height: 40)
+                    .background(SubwayColors.color(for: selectedRoute))
+                    .cornerRadius(8)
+
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(title)
+                        .font(.body)
                         .fontWeight(.medium)
-                        .foregroundColor(.secondary)
-
-                    HStack {
-                        Text("Minutes to station:")
-                        Stepper("\(walkingTime)", value: $walkingTime, in: 0...30)
-                            .frame(width: 100)
-                    }
-
-                    Text("Trains arriving within \(walkingTime) min will show \"Leave now!\"")
+                        .foregroundColor(.primary)
+                    Text(subtitle)
                         .font(.caption)
                         .foregroundColor(.secondary)
                 }
-                .padding(.horizontal, 20)
 
                 Spacer()
 
-                // Save button
-                Button(action: saveSettings) {
-                    Text("Save")
-                        .frame(maxWidth: .infinity)
-                        .padding(.vertical, 6)
-                }
-                .buttonStyle(.borderedProminent)
-                .padding(.horizontal, 20)
-                .padding(.bottom, 16)
+                Image(systemName: "chevron.right")
+                    .font(.caption)
+                    .foregroundColor(.secondary)
             }
+            .padding(14)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .background(Color(nsColor: .controlBackgroundColor))
+            .cornerRadius(10)
+            .contentShape(Rectangle())
+        }
+        .buttonStyle(HighlightButtonStyle())
+    }
+
+    // MARK: - Station Picker (filtered by route)
+
+    private var stationPickerContent: some View {
+        StationPickerView(route: selectedRoute) { station in
+            selectedStation = station
+            saveSettings()
         }
     }
 
@@ -195,16 +265,12 @@ struct SettingsView: View {
 
     private func goBack() {
         switch step {
-        case .stationPicker:
+        case .linePicker:
             break
-        case .routePicker:
-            step = .stationPicker
         case .directionPicker:
-            if let station = selectedStation, station.inferredRoutes.count > 1 {
-                step = .routePicker
-            } else {
-                step = .stationPicker
-            }
+            step = .linePicker
+        case .stationPicker:
+            step = .directionPicker
         }
     }
 
@@ -217,6 +283,6 @@ struct SettingsView: View {
             direction: selectedDirection
         )
         settings.walkingTimeMinutes = walkingTime
-        dismiss()
+        onDone()
     }
 }
