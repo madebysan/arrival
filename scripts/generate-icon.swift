@@ -1,6 +1,6 @@
 #!/usr/bin/swift
 
-// Generates a programmatic app icon for SubwayBar
+// Generates a programmatic app icon for Arrival
 // Orange circle with white "F" — subway bullet style
 
 import Cocoa
@@ -95,7 +95,7 @@ let projectDir = URL(fileURLWithPath: scriptPath)
     .path
 
 // Create iconset directory
-let iconsetDir = "\(projectDir)/dist/SubwayBar.iconset"
+let iconsetDir = "\(projectDir)/dist/Arrival.iconset"
 let assetsDir = "\(projectDir)/assets"
 
 let fm = FileManager.default

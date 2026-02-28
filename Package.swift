@@ -3,7 +3,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "SubwayBar",
+    name: "Arrival",
     platforms: [
         .macOS(.v13)
     ],
@@ -12,7 +12,7 @@ let package = Package(
     ],
     targets: [
         .executableTarget(
-            name: "SubwayBar",
+            name: "Arrival",
             dependencies: [
                 .product(name: "SwiftProtobuf", package: "swift-protobuf"),
             ],
@@ -22,8 +22,8 @@ let package = Package(
             ]
         ),
         .testTarget(
-            name: "SubwayBarTests",
-            dependencies: ["SubwayBar"]
+            name: "ArrivalTests",
+            dependencies: ["Arrival"]
         ),
     ]
 )

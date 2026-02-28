@@ -5,11 +5,11 @@
     <key>LSUIElement</key>
     <true/>
     <key>CFBundleName</key>
-    <string>SubwayBar</string>
+    <string>Arrival</string>
     <key>CFBundleDisplayName</key>
-    <string>SubwayBar</string>
+    <string>Arrival</string>
     <key>CFBundleIdentifier</key>
-    <string>com.santiagoalonso.SubwayBar</string>
+    <string>com.santiagoalonso.Arrival</string>
     <key>CFBundleVersion</key>
     <string>1</string>
     <key>CFBundleShortVersionString</key>
