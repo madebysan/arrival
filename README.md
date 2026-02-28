@@ -10,7 +10,7 @@ Never miss your train.</p>
 ---
 
 <p align="center">
-  <img src="assets/screenshot.png" width="720" alt="Arrival app screenshots showing line picker, direction picker, station picker, and live arrivals">
+  <img src="assets/screenshot-v2.png" width="720" alt="Arrival app screenshots showing line picker, direction picker, station picker, and live arrivals">
 </p>
 
 ## What it does
