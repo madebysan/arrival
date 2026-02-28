@@ -15,3 +15,10 @@ xcuserdata/
 
 # Build artifacts
 DerivedData/
+*.dmg
+dist/
+
+# Local-only files
+plan.md
+BUILD_REPORT.md
+checkpoint.json
