@@ -11,9 +11,33 @@ class StationStore: ObservableObject {
         loadStations()
     }
 
+    // Find the SPM resource bundle in both .app and development layouts
+    private static func resourceBundle() -> Bundle? {
+        let bundleName = "Arrival_Arrival"
+
+        // .app bundle: Contents/Resources/Arrival_Arrival.bundle
+        if let resourcesURL = Bundle.main.resourceURL {
+            let url = resourcesURL.appendingPathComponent("\(bundleName).bundle")
+            if let bundle = Bundle(url: url) {
+                return bundle
+            }
+        }
+
+        // SPM development build: same directory as the executable
+        if let execURL = Bundle.main.executableURL?.deletingLastPathComponent() {
+            let url = execURL.appendingPathComponent("\(bundleName).bundle")
+            if let bundle = Bundle(url: url) {
+                return bundle
+            }
+        }
+
+        return nil
+    }
+
     // Parse stops.txt from the app bundle
     private func loadStations() {
-        guard let url = Bundle.module.url(forResource: "stops", withExtension: "txt") else {
+        guard let bundle = Self.resourceBundle(),
+              let url = bundle.url(forResource: "stops", withExtension: "txt") else {
             print("StationStore: Could not find stops.txt in bundle")
             return
         }
