@@ -6,6 +6,7 @@
 Never miss your train.</p>
 <p align="center"><strong>Version 1.0.0</strong> · macOS 13+ · Apple Silicon & Intel</p>
 <p align="center"><a href="https://github.com/madebysan/arrival/releases/latest"><strong>Download Arrival</strong></a></p>
+<p align="center">Also available for <a href="https://github.com/madebysan/arrival-ios"><strong>iOS</strong></a></p>
 
 ---
 
