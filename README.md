@@ -22,20 +22,20 @@ Arrival sits in your macOS menu bar as a colored subway bullet icon. Click it to
 - **Service alerts** for your line (delays, planned work)
 - **"Leave now!"** indicator based on your walking time to the station
 
-Data comes directly from the MTA's free GTFS-Realtime feeds — the same source that powers the countdown clocks in stations.
+Data comes directly from the MTA's free GTFS-Realtime feeds – the same source that powers the countdown clocks in stations.
 
 ## Features
 
-- **Every NYC subway line** — 1/2/3, 4/5/6, 7, A/C/E, B/D/F/M, G, J/Z, L, N/Q/R/W, S
-- **All ~496 stations** — searchable picker, filtered by line
-- **On-demand refresh** — fetches fresh data every time you open the menu (no background polling, no battery drain)
-- **Walking time** — set how many minutes you are from the station; trains you can still catch are highlighted
-- **Service alerts** — live delay and planned work notifications for your line
-- **Native macOS** — lightweight, follows system dark/light mode, no Electron
+- **Every NYC subway line** – 1/2/3, 4/5/6, 7, A/C/E, B/D/F/M, G, J/Z, L, N/Q/R/W, S
+- **All ~496 stations** – searchable picker, filtered by line
+- **On-demand refresh** – fetches fresh data every time you open the menu (no background polling, no battery drain)
+- **Walking time** – set how many minutes you are from the station; trains you can still catch are highlighted
+- **Service alerts** – live delay and planned work notifications for your line
+- **Native macOS** – lightweight, follows system dark/light mode, no Electron
 
 ## Setup
 
-1. Open Arrival — the icon appears in your menu bar
+1. Open Arrival – the icon appears in your menu bar
 2. Click the gear icon to open settings
 3. Pick your subway line → direction → station
 4. Set your walking time (optional)
@@ -67,7 +67,7 @@ swift build -c release
 
 ## Data Source
 
-All train arrival data comes from the [MTA's GTFS-Realtime feeds](https://api.mta.info/), which are free and require no API key. The app fetches data on-demand when you click the menu bar icon — no background polling.
+All train arrival data comes from the [MTA's GTFS-Realtime feeds](https://api.mta.info/), which are free and require no API key. The app fetches data on-demand when you click the menu bar icon – no background polling.
 
 ## License
 
