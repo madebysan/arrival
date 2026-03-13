@@ -71,7 +71,7 @@ All train arrival data comes from the [MTA's GTFS-Realtime feeds](https://api.mt
 
 ## License
 
-MIT — see [LICENSE](LICENSE)
+[MIT](LICENSE)
 
 ---
 
