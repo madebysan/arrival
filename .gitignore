@@ -17,3 +17,20 @@ DerivedData/
 plan.md
 notes.md
 IDEAS.md
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/screenshots.html
+fastlane/test_output
+fastlane/README.md
+
+# Build artifacts
+build/
+*.ipa
+*.dSYM.zip
+*.xcarchive
+
+# API keys (paranoia — keys live in ~/private_keys/, never let one slip into a repo)
+*.p8
+api_key.json
