@@ -5,7 +5,13 @@
 <p align="center">Real-time NYC subway arrivals on your iPhone.<br>
 Never miss your train.</p>
 <p align="center"><strong>Version 1.0.0</strong> · iOS 17+</p>
-<p align="center"><a href="https://apps.apple.com/us/app/arrival-nyc-subway/id6759941751"><strong>Download on the App Store</strong></a></p>
+
+<p align="center">
+  <a href="https://apps.apple.com/us/app/arrival-nyc-subway/id6759941751">
+    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" height="50">
+  </a>
+</p>
+
 <p align="center">Also available for <a href="https://github.com/madebysan/arrival"><strong>macOS</strong></a></p>
 
 ---
