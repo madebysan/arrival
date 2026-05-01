@@ -5,6 +5,7 @@
 <p align="center">Real-time NYC subway arrivals on your iPhone.<br>
 Never miss your train.</p>
 <p align="center"><strong>Version 1.0.0</strong> · iOS 17+</p>
+<p align="center"><a href="https://apps.apple.com/us/app/arrival-nyc-subway/id6759941751"><strong>Download on the App Store</strong></a></p>
 <p align="center">Also available for <a href="https://github.com/madebysan/arrival"><strong>macOS</strong></a></p>
 
 ---
@@ -53,7 +54,7 @@ cd arrival-ios
 open ArrivaliOS.xcodeproj
 ```
 
-Build and run with Xcode 16+ targeting iOS 17+. No binary is attached to releases because iOS apps can't be side-loaded from GitHub. Build in Xcode, or install via TestFlight separately.
+Build and run with Xcode 16+ targeting iOS 17+. The shipped build is on the [App Store](https://apps.apple.com/us/app/arrival-nyc-subway/id6759941751).
 
 ## Tech stack
 

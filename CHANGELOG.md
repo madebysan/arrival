@@ -1,3 +1,12 @@
+## 2026-05-01
+
+### Released
+- **Arrival 1.0 is live on the App Store** — https://apps.apple.com/us/app/arrival-nyc-subway/id6759941751
+- App Store ID: `6759941751`
+- Approved by Apple Review and auto-released at 12:18 UTC
+
+---
+
 ## 2026-04-30 (session 1)
 
 ### Features
