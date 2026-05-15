@@ -1,26 +1,26 @@
-<p align="center">
-  <img src="assets/app-icon.png" width="128" height="128" alt="Arrival app icon">
-</p>
-<h1 align="center">Arrival for iOS</h1>
-<p align="center">Real-time NYC subway arrivals on your iPhone.<br>
+<p><img src="assets/app-icon.png" width="128" height="128" alt="Arrival app icon"></p>
+
+<h1>Arrival for iOS</h1>
+
+<p>Real-time NYC subway arrivals on your iPhone.<br>
 Never miss your train.</p>
-<p align="center"><strong>Version 1.0.0</strong> · iOS 17+</p>
 
-<p align="center">
-  <a href="https://apps.apple.com/us/app/arrival-nyc-subway/id6759941751">
-    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" height="50">
-  </a>
+<p><strong>Version 1.0.0</strong> · iOS 17+</p>
+
+<p>
+  <img src="https://img.shields.io/badge/Swift-f05138" alt="Swift">
+  <img src="https://img.shields.io/badge/SwiftUI-0066cc" alt="SwiftUI">
+  <img src="https://img.shields.io/badge/iOS-000000" alt="iOS">
+  <img src="https://img.shields.io/badge/WidgetKit-0066cc" alt="WidgetKit">
 </p>
 
-<p align="center">Also available for <a href="https://github.com/madebysan/arrival"><strong>macOS</strong></a></p>
-
----
-
-<p align="center">
-  <img src="assets/screenshot.png" width="720" alt="Arrival iOS app showing live subway arrivals and home screen widgets">
+<p>
+  <a href="https://apps.apple.com/us/app/arrival-nyc-subway/id6759941751"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" height="50"></a>
 </p>
 
----
+<p>Also available for <a href="https://github.com/madebysan/arrival">macOS</a></p>
+
+![Arrival iOS app showing live subway arrivals and home screen widgets](assets/screenshot.png)
 
 I commute the same route every day. The only thing I actually need is when is the next train at my stop, on my line, going my direction. The home screen widget does most of the work. Glance at your phone, see the next three trains, walk out of your apartment if one is still catchable. When you need more detail, open the app for service alerts and longer countdowns.
 
