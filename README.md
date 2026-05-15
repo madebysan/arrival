@@ -1,6 +1,6 @@
 <p><img src="assets/app-icon.png" width="128" height="128" alt="Arrival app icon"></p>
 
-<h1>Arrival</h1>
+<h1>Arrival for macOS</h1>
 
 <p>Real-time NYC subway arrivals in your menu bar.<br>
 Never miss your train.</p>
@@ -11,9 +11,12 @@ Never miss your train.</p>
   <img src="https://img.shields.io/badge/Swift-f05138" alt="Swift">
   <img src="https://img.shields.io/badge/SwiftUI-0066cc" alt="SwiftUI">
   <img src="https://img.shields.io/badge/macOS-000000" alt="macOS">
+  <img src="https://img.shields.io/badge/MenuBarExtra-0066cc" alt="MenuBarExtra">
 </p>
 
-<p><a href="https://github.com/madebysan/arrival/releases/latest">Download Arrival</a> · <a href="https://github.com/madebysan/arrival-ios">iOS version</a></p>
+<p><a href="https://github.com/madebysan/arrival/releases/latest">Download Arrival</a></p>
+
+<p>Also available for <a href="https://github.com/madebysan/arrival-ios">iOS</a></p>
 
 ![Arrival app showing line picker, direction picker, station picker, and live arrivals](assets/screenshot-v2.png)
 
