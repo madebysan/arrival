@@ -1,26 +1,25 @@
-<p align="center">
-  <img src="assets/app-icon.png" width="128" height="128" alt="Arrival app icon">
-</p>
-<h1 align="center">Arrival</h1>
-<p align="center">Real-time NYC subway arrivals in your menu bar.<br>
+<p><img src="assets/app-icon.png" width="128" height="128" alt="Arrival app icon"></p>
+
+<h1>Arrival</h1>
+
+<p>Real-time NYC subway arrivals in your menu bar.<br>
 Never miss your train.</p>
-<p align="center"><strong>Version 1.0.1</strong> · macOS 13+ · Apple Silicon & Intel</p>
-<p align="center"><a href="https://github.com/madebysan/arrival/releases/latest"><strong>Download Arrival</strong></a></p>
-<p align="center">Also available for <a href="https://github.com/madebysan/arrival-ios"><strong>iOS</strong></a></p>
 
----
+<p><strong>Version 1.0.1</strong> · macOS 13+ · Apple Silicon & Intel</p>
 
-<p align="center">
-  <img src="assets/screenshot-v2.png" width="720" alt="Arrival app screenshots showing line picker, direction picker, station picker, and live arrivals">
+<p>
+  <img src="https://img.shields.io/badge/Swift-f05138" alt="Swift">
+  <img src="https://img.shields.io/badge/SwiftUI-0066cc" alt="SwiftUI">
+  <img src="https://img.shields.io/badge/macOS-000000" alt="macOS">
 </p>
 
-<p align="center">
-  <img src="https://github.com/madebysan/arrival-ios/raw/main/assets/screenshot.png" width="720" alt="Arrival for iOS showing live subway arrivals and home screen widgets">
-</p>
+<p><a href="https://github.com/madebysan/arrival/releases/latest">Download Arrival</a> · <a href="https://github.com/madebysan/arrival-ios">iOS version</a></p>
 
----
+![Arrival app showing line picker, direction picker, station picker, and live arrivals](assets/screenshot-v2.png)
 
 I commute the same route every day. The only thing I actually need is when is the next train at my stop, on my line, going my direction. Colored subway bullet in the menu bar. Click it, see the next trains. Close it, back to work.
+
+![Arrival for iOS showing live subway arrivals and home screen widgets](https://github.com/madebysan/arrival-ios/raw/main/assets/screenshot.png)
 
 ## What it does
 
