@@ -24,40 +24,19 @@ I commute the same route every day. The only thing I actually need is when is th
 
 ![Arrival for iOS showing live subway arrivals and home screen widgets](https://github.com/madebysan/arrival-ios/raw/main/assets/screenshot.png)
 
-## What it does
+## How it works
 
-Arrival sits in the menu bar as a colored subway-bullet icon. Click it and you see, instantly:
+Arrival sits in the menu bar as a colored subway bullet. Choose a line, direction, and station once. From then on, clicking the icon shows live countdowns, service alerts, and which trains you can still catch based on your walking time.
 
-- **Next trains** at your station with live countdowns
-- **Service alerts** for your line (delays, planned work)
-- **"Leave now!"** indicator based on your walking time to the station
-
-Data comes directly from the MTA's free GTFS-Realtime feeds, the same source that powers the countdown clocks in stations.
-
-## Features
-
-- **Every NYC subway line.** 1/2/3, 4/5/6, 7, A/C/E, B/D/F/M, G, J/Z, L, N/Q/R/W, S
-- **All ~496 stations.** Searchable picker, filtered by line
-- **On-demand refresh.** Fetches fresh data every time you open the menu. No background polling, no battery drain.
-- **Walking time.** Set how many minutes you are from the station. Trains you can still catch are highlighted.
-- **Service alerts.** Live delay and planned-work notifications for your line.
-- **Native macOS.** Lightweight, follows system appearance, no Electron.
-
-## Setup
-
-1. Open Arrival. The icon appears in your menu bar.
-2. Click the gear icon to open settings
-3. Pick your subway line → direction → station
-4. Set your walking time (optional)
-5. Click the icon anytime to see live arrivals
+Every subway line and roughly 496 stations are included. Data comes directly from the MTA's free [GTFS-Realtime feeds](https://api.mta.info/), the same source used by the countdown clocks in stations. Arrival fetches only when you open it, so it does not poll in the background.
 
 ## Install
-
-### Download (recommended)
 
 1. Download `Arrival.dmg` from the [latest release](https://github.com/madebysan/arrival/releases/latest)
 2. Open the DMG and drag Arrival to Applications
 3. Launch from Applications (right-click → Open on first launch if needed)
+
+The menu bar icon opens settings on first launch. Pick your subway line, direction, station, and optional walking time.
 
 ### Build from source
 
@@ -79,14 +58,8 @@ swift build -c release
 - MTA GTFS-Realtime feeds (free, no API key)
 - Swift Package Manager
 
-## Data source
-
-All train-arrival data comes from the [MTA's GTFS-Realtime feeds](https://api.mta.info/), which are free and require no API key. The app fetches data on-demand when you click the menu-bar icon. No background polling.
-
 ## License
 
 [MIT](LICENSE)
-
----
 
 Made by [santiagoalonso.com](https://santiagoalonso.com)
