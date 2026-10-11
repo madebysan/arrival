@@ -18,7 +18,7 @@ Never miss your train.</p>
   <a href="https://apps.apple.com/us/app/arrival-nyc-subway/id6759941751"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" height="50"></a>
 </p>
 
-<p>Also available for <a href="https://github.com/madebysan/arrival">macOS</a></p>
+<p>Also available for <a href="../macos/">macOS</a></p>
 
 ![Arrival iOS app showing live subway arrivals and home screen widgets](assets/screenshot.png)
 
@@ -37,8 +37,8 @@ Arrival includes every subway line and roughly 496 stations. Save up to four sto
 ## Build from source
 
 ```bash
-git clone https://github.com/madebysan/arrival-ios.git
-cd arrival-ios
+git clone https://github.com/madebysan/arrival.git
+cd arrival/ios
 open ArrivaliOS.xcodeproj
 ```
 
@@ -54,6 +54,6 @@ Build and run with Xcode 16+ targeting iOS 17+. The shipped build is on the [App
 
 ## License
 
-[MIT](LICENSE)
+[MIT](../LICENSE)
 
 Made by [santiagoalonso.com](https://santiagoalonso.com)

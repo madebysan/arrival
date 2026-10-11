@@ -16,13 +16,13 @@ Never miss your train.</p>
 
 <p><a href="https://github.com/madebysan/arrival/releases/latest">Download Arrival</a></p>
 
-<p>Also available for <a href="https://github.com/madebysan/arrival-ios">iOS</a></p>
+<p>Also available for <a href="../ios/">iOS</a></p>
 
 ![Arrival app showing line picker, direction picker, station picker, and live arrivals](assets/screenshot-v2.png)
 
 I commute the same route every day. The only thing I actually need is when is the next train at my stop, on my line, going my direction. Colored subway bullet in the menu bar. Click it, see the next trains. Close it, back to work.
 
-![Arrival for iOS showing live subway arrivals and home screen widgets](https://github.com/madebysan/arrival-ios/raw/main/assets/screenshot.png)
+![Arrival for iOS showing live subway arrivals and home screen widgets](../ios/assets/screenshot.png)
 
 ## How it works
 
@@ -42,7 +42,7 @@ The menu bar icon opens settings on first launch. Pick your subway line, directi
 
 ```bash
 git clone https://github.com/madebysan/arrival.git
-cd arrival
+cd arrival/macos
 swift build -c release
 # Binary at .build/release/Arrival
 ```
@@ -60,6 +60,6 @@ swift build -c release
 
 ## License
 
-[MIT](LICENSE)
+[MIT](../LICENSE)
 
 Made by [santiagoalonso.com](https://santiagoalonso.com)
