@@ -1,0 +1,698 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2608629B2F54E70D00696E25 /* SwiftProtobuf in Frameworks */ = {isa = PBXBuildFile; productRef = F3000001 /* SwiftProtobuf */; };
+		A1000001 /* ArrivalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000001 /* ArrivalApp.swift */; };
+		A1000002 /* Arrival.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000002 /* Arrival.swift */; };
+		A1000003 /* ServiceAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000003 /* ServiceAlert.swift */; };
+		A1000004 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000004 /* Station.swift */; };
+		A1000014 /* RouteStops.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000014 /* RouteStops.swift */; };
+		A1000005 /* TrackedStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000005 /* TrackedStop.swift */; };
+		A1000006 /* MTAService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000006 /* MTAService.swift */; };
+		A1000007 /* StationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000007 /* StationStore.swift */; };
+		A1000008 /* StopManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000008 /* StopManager.swift */; };
+		A1000009 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000009 /* HomeView.swift */; };
+		A100000A /* StopCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100000A /* StopCard.swift */; };
+		A100000B /* AddStopFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100000B /* AddStopFlow.swift */; };
+		A100000C /* StationPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100000C /* StationPickerView.swift */; };
+		A100000D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100000D /* SettingsView.swift */; };
+		A100000E /* SubwayColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100000E /* SubwayColors.swift */; };
+		A100000F /* SubwayBullet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100000F /* SubwayBullet.swift */; };
+		A1000010 /* gtfs-realtime.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000010 /* gtfs-realtime.pb.swift */; };
+		A1000011 /* nyct-subway.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000011 /* nyct-subway.pb.swift */; };
+		A1000012 /* stops.txt in Resources */ = {isa = PBXBuildFile; fileRef = B1000012 /* stops.txt */; };
+		A1000013 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1000013 /* Assets.xcassets */; };
+		W1000001 /* ArrivalWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = W2000001 /* ArrivalWidget.swift */; };
+		W1000002 /* ArrivalTimelineProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = W2000002 /* ArrivalTimelineProvider.swift */; };
+		W1000003 /* ArrivalWidgetViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = W2000003 /* ArrivalWidgetViews.swift */; };
+		W1000004 /* SelectStopIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = W2000004 /* SelectStopIntent.swift */; };
+		W1000005 /* Arrival.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000002 /* Arrival.swift */; };
+		W1000006 /* ServiceAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000003 /* ServiceAlert.swift */; };
+		W1000007 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000004 /* Station.swift */; };
+		W1000022 /* RouteStops.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000014 /* RouteStops.swift */; };
+		W1000008 /* TrackedStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000005 /* TrackedStop.swift */; };
+		W1000009 /* MTAService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000006 /* MTAService.swift */; };
+		W1000010 /* StationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000007 /* StationStore.swift */; };
+		W1000011 /* StopManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000008 /* StopManager.swift */; };
+		W1000012 /* SubwayColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100000E /* SubwayColors.swift */; };
+		W1000013 /* SubwayBullet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B100000F /* SubwayBullet.swift */; };
+		W1000014 /* gtfs-realtime.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000010 /* gtfs-realtime.pb.swift */; };
+		W1000015 /* nyct-subway.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000011 /* nyct-subway.pb.swift */; };
+		W1000016 /* stops.txt in Resources */ = {isa = PBXBuildFile; fileRef = B1000012 /* stops.txt */; };
+		W1000017 /* SwiftProtobuf in Frameworks */ = {isa = PBXBuildFile; productRef = W9000001 /* SwiftProtobuf */; };
+		W1000018 /* ArrivalWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = W2000007 /* ArrivalWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		W1000019 /* AppIntents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = W2000008 /* AppIntents.framework */; };
+		W1000020 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = W2000009 /* SwiftUI.framework */; };
+		W1000021 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = W2000010 /* WidgetKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		W8000001 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F1000010 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = W5000001;
+			remoteInfo = ArrivalWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		W4000004 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				W1000018 /* ArrivalWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		B1000001 /* ArrivalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalApp.swift; sourceTree = "<group>"; };
+		B1000002 /* Arrival.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arrival.swift; sourceTree = "<group>"; };
+		B1000003 /* ServiceAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAlert.swift; sourceTree = "<group>"; };
+		B1000004 /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
+		B1000014 /* RouteStops.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteStops.swift; sourceTree = "<group>"; };
+		B1000005 /* TrackedStop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackedStop.swift; sourceTree = "<group>"; };
+		B1000006 /* MTAService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTAService.swift; sourceTree = "<group>"; };
+		B1000007 /* StationStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationStore.swift; sourceTree = "<group>"; };
+		B1000008 /* StopManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopManager.swift; sourceTree = "<group>"; };
+		B1000009 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		B100000A /* StopCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopCard.swift; sourceTree = "<group>"; };
+		B100000B /* AddStopFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStopFlow.swift; sourceTree = "<group>"; };
+		B100000C /* StationPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationPickerView.swift; sourceTree = "<group>"; };
+		B100000D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		B100000E /* SubwayColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubwayColors.swift; sourceTree = "<group>"; };
+		B100000F /* SubwayBullet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubwayBullet.swift; sourceTree = "<group>"; };
+		B1000010 /* gtfs-realtime.pb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "gtfs-realtime.pb.swift"; sourceTree = "<group>"; };
+		B1000011 /* nyct-subway.pb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "nyct-subway.pb.swift"; sourceTree = "<group>"; };
+		B1000012 /* stops.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = stops.txt; sourceTree = "<group>"; };
+		B1000013 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C1000001 /* ArrivaliOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArrivaliOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		W2000001 /* ArrivalWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalWidget.swift; sourceTree = "<group>"; };
+		W2000002 /* ArrivalTimelineProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalTimelineProvider.swift; sourceTree = "<group>"; };
+		W2000003 /* ArrivalWidgetViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalWidgetViews.swift; sourceTree = "<group>"; };
+		W2000004 /* SelectStopIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectStopIntent.swift; sourceTree = "<group>"; };
+		W2000005 /* ArrivaliOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ArrivaliOS.entitlements; sourceTree = "<group>"; };
+		W2000006 /* ArrivalWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ArrivalWidgetExtension.entitlements; sourceTree = "<group>"; };
+		W2000007 /* ArrivalWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ArrivalWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		W2000008 /* AppIntents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppIntents.framework; path = System/Library/Frameworks/AppIntents.framework; sourceTree = SDKROOT; };
+		W2000009 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		W2000010 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D1000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2608629B2F54E70D00696E25 /* SwiftProtobuf in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		W4000003 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				W1000021 /* WidgetKit.framework in Frameworks */,
+				W1000020 /* SwiftUI.framework in Frameworks */,
+				W1000019 /* AppIntents.framework in Frameworks */,
+				W1000017 /* SwiftProtobuf in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2608629D2F54F53600696E25 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				W2000010 /* WidgetKit.framework */,
+				W2000009 /* SwiftUI.framework */,
+				W2000008 /* AppIntents.framework */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		E1000001 = {
+			isa = PBXGroup;
+			children = (
+				E1000002 /* ArrivaliOS */,
+				E1000009 /* Products */,
+				2608629D2F54F53600696E25 /* Recovered References */,
+			);
+			sourceTree = "<group>";
+		};
+		E1000002 /* ArrivaliOS */ = {
+			isa = PBXGroup;
+			children = (
+				W2000005 /* ArrivaliOS.entitlements */,
+				B1000001 /* ArrivalApp.swift */,
+				E1000003 /* Models */,
+				E1000004 /* Services */,
+				E1000005 /* Views */,
+				E1000006 /* Utilities */,
+				E1000007 /* Proto */,
+				E1000008 /* Resources */,
+				W3000001 /* Widget */,
+				B1000013 /* Assets.xcassets */,
+			);
+			path = ArrivaliOS;
+			sourceTree = "<group>";
+		};
+		E1000003 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B1000002 /* Arrival.swift */,
+				B1000014 /* RouteStops.swift */,
+				B1000003 /* ServiceAlert.swift */,
+				B1000004 /* Station.swift */,
+				B1000005 /* TrackedStop.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E1000004 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B1000006 /* MTAService.swift */,
+				B1000007 /* StationStore.swift */,
+				B1000008 /* StopManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		E1000005 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B1000009 /* HomeView.swift */,
+				B100000A /* StopCard.swift */,
+				B100000B /* AddStopFlow.swift */,
+				B100000C /* StationPickerView.swift */,
+				B100000D /* SettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E1000006 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				B100000E /* SubwayColors.swift */,
+				B100000F /* SubwayBullet.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		E1000007 /* Proto */ = {
+			isa = PBXGroup;
+			children = (
+				B1000010 /* gtfs-realtime.pb.swift */,
+				B1000011 /* nyct-subway.pb.swift */,
+			);
+			path = Proto;
+			sourceTree = "<group>";
+		};
+		E1000008 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B1000012 /* stops.txt */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E1000009 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C1000001 /* ArrivaliOS.app */,
+				W2000007 /* ArrivalWidgetExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		W3000001 /* Widget */ = {
+			isa = PBXGroup;
+			children = (
+				W2000006 /* ArrivalWidgetExtension.entitlements */,
+				W2000001 /* ArrivalWidget.swift */,
+				W2000002 /* ArrivalTimelineProvider.swift */,
+				W2000003 /* ArrivalWidgetViews.swift */,
+				W2000004 /* SelectStopIntent.swift */,
+			);
+			path = Widget;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F1000001 /* ArrivaliOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F2000003 /* Build configuration list for PBXNativeTarget "ArrivaliOS" */;
+			buildPhases = (
+				F1000002 /* Sources */,
+				F1000003 /* Resources */,
+				D1000001 /* Frameworks */,
+				W4000004 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				W8000002 /* PBXTargetDependency */,
+			);
+			name = ArrivaliOS;
+			packageProductDependencies = (
+				F3000001 /* SwiftProtobuf */,
+			);
+			productName = ArrivaliOS;
+			productReference = C1000001 /* ArrivaliOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		W5000001 /* ArrivalWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = W7000001 /* Build configuration list for PBXNativeTarget "ArrivalWidgetExtension" */;
+			buildPhases = (
+				W4000001 /* Sources */,
+				W4000002 /* Resources */,
+				W4000003 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ArrivalWidgetExtension;
+			packageProductDependencies = (
+				W9000001 /* SwiftProtobuf */,
+			);
+			productName = ArrivalWidgetExtension;
+			productReference = W2000007 /* ArrivalWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F1000010 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 2620;
+				TargetAttributes = {
+					F1000001 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					W5000001 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+				};
+			};
+			buildConfigurationList = F2000001 /* Build configuration list for PBXProject "ArrivaliOS" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E1000001;
+			packageReferences = (
+				F3000002 /* XCRemoteSwiftPackageReference "swift-protobuf" */,
+			);
+			productRefGroup = E1000009 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F1000001 /* ArrivaliOS */,
+				W5000001 /* ArrivalWidgetExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F1000003 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1000012 /* stops.txt in Resources */,
+				A1000013 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		W4000002 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				W1000016 /* stops.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F1000002 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1000001 /* ArrivalApp.swift in Sources */,
+				A1000002 /* Arrival.swift in Sources */,
+				A1000003 /* ServiceAlert.swift in Sources */,
+				A1000004 /* Station.swift in Sources */,
+				A1000014 /* RouteStops.swift in Sources */,
+				A1000005 /* TrackedStop.swift in Sources */,
+				A1000006 /* MTAService.swift in Sources */,
+				A1000007 /* StationStore.swift in Sources */,
+				A1000008 /* StopManager.swift in Sources */,
+				A1000009 /* HomeView.swift in Sources */,
+				A100000A /* StopCard.swift in Sources */,
+				A100000B /* AddStopFlow.swift in Sources */,
+				A100000C /* StationPickerView.swift in Sources */,
+				A100000D /* SettingsView.swift in Sources */,
+				A100000E /* SubwayColors.swift in Sources */,
+				A100000F /* SubwayBullet.swift in Sources */,
+				A1000010 /* gtfs-realtime.pb.swift in Sources */,
+				A1000011 /* nyct-subway.pb.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		W4000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				W1000001 /* ArrivalWidget.swift in Sources */,
+				W1000002 /* ArrivalTimelineProvider.swift in Sources */,
+				W1000003 /* ArrivalWidgetViews.swift in Sources */,
+				W1000004 /* SelectStopIntent.swift in Sources */,
+				W1000005 /* Arrival.swift in Sources */,
+				W1000006 /* ServiceAlert.swift in Sources */,
+				W1000007 /* Station.swift in Sources */,
+				W1000022 /* RouteStops.swift in Sources */,
+				W1000008 /* TrackedStop.swift in Sources */,
+				W1000009 /* MTAService.swift in Sources */,
+				W1000010 /* StationStore.swift in Sources */,
+				W1000011 /* StopManager.swift in Sources */,
+				W1000012 /* SubwayColors.swift in Sources */,
+				W1000013 /* SubwayBullet.swift in Sources */,
+				W1000014 /* gtfs-realtime.pb.swift in Sources */,
+				W1000015 /* nyct-subway.pb.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		W8000002 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = W5000001 /* ArrivalWidgetExtension */;
+			targetProxy = W8000001 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		F2000010 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = QAMM2A6WRQ;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F2000011 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = QAMM2A6WRQ;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F2000020 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ArrivaliOS/ArrivaliOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Arrival;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.santiagoalonso.ArrivaliOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1";
+			};
+			name = Debug;
+		};
+		F2000021 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ArrivaliOS/ArrivaliOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Arrival;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.santiagoalonso.ArrivaliOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1";
+			};
+			name = Release;
+		};
+		W6000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = ArrivaliOS/Widget/ArrivalWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ArrivaliOS/Widget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Arrival Widget";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.santiagoalonso.ArrivaliOS.ArrivalWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1";
+			};
+			name = Debug;
+		};
+		W6000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = ArrivaliOS/Widget/ArrivalWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ArrivaliOS/Widget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Arrival Widget";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.santiagoalonso.ArrivaliOS.ArrivalWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F2000001 /* Build configuration list for PBXProject "ArrivaliOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F2000010 /* Debug */,
+				F2000011 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F2000003 /* Build configuration list for PBXNativeTarget "ArrivaliOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F2000020 /* Debug */,
+				F2000021 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		W7000001 /* Build configuration list for PBXNativeTarget "ArrivalWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				W6000001 /* Debug */,
+				W6000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F3000002 /* XCRemoteSwiftPackageReference "swift-protobuf" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-protobuf.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.27.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F3000001 /* SwiftProtobuf */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F3000002 /* XCRemoteSwiftPackageReference "swift-protobuf" */;
+			productName = SwiftProtobuf;
+		};
+		W9000001 /* SwiftProtobuf */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F3000002 /* XCRemoteSwiftPackageReference "swift-protobuf" */;
+			productName = SwiftProtobuf;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = F1000010 /* Project object */;
+}
