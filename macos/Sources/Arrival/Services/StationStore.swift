@@ -31,6 +31,12 @@ class StationStore: ObservableObject {
             }
         }
 
+        // Tests: the resource bundle sits next to the .xctest bundle in .build/
+        let testsDir = Bundle(for: StationStore.self).bundleURL.deletingLastPathComponent()
+        if let bundle = Bundle(url: testsDir.appendingPathComponent("\(bundleName).bundle")) {
+            return bundle
+        }
+
         return nil
     }
 

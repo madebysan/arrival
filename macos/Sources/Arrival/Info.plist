@@ -10,14 +10,17 @@
     <string>Arrival</string>
     <key>CFBundleIdentifier</key>
     <string>com.santiagoalonso.Arrival</string>
+    <key>CFBundleExecutable</key>
+    <string>Arrival</string>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+    <key>CFBundleIconFile</key>
+    <string>AppIcon</string>
     <key>CFBundleVersion</key>
-    <string>1</string>
+    <string>3</string>
     <key>CFBundleShortVersionString</key>
-    <string>1.0.0</string>
-    <key>NSAppTransportSecurity</key>
-    <dict>
-        <key>NSAllowsArbitraryLoads</key>
-        <true/>
-    </dict>
+    <string>1.0.2</string>
+    <key>LSMinimumSystemVersion</key>
+    <string>13.0</string>
 </dict>
 </plist>

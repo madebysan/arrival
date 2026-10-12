@@ -5,7 +5,7 @@
 <p>Real-time NYC subway arrivals in your menu bar.<br>
 Never miss your train.</p>
 
-<p><strong>Version 1.0.1</strong> · macOS 13+ · Apple Silicon & Intel</p>
+<p><strong>Version 1.0.2</strong> · macOS 13+ · Apple Silicon & Intel</p>
 
 <p>
   <img src="https://img.shields.io/badge/Swift-f05138" alt="Swift">
@@ -34,7 +34,7 @@ Every subway line and roughly 496 stations are included. Data comes directly fro
 
 1. Download `Arrival.dmg` from the [latest release](https://github.com/madebysan/arrival/releases/latest)
 2. Open the DMG and drag Arrival to Applications
-3. Launch from Applications (right-click → Open on first launch if needed)
+3. Launch from Applications. It's signed and notarized, and runs on Apple Silicon and Intel Macs.
 
 The menu bar icon opens settings on first launch. Pick your subway line, direction, station, and optional walking time.
 
@@ -45,11 +45,10 @@ git clone https://github.com/madebysan/arrival.git
 cd arrival/macos
 swift build -c release
 # Binary at .build/release/Arrival
+
+swift test                  # run the tests
+./scripts/build-dmg.sh      # universal, signed and notarized dist/Arrival.dmg
 ```
-
-## Known issues
-
-- **v1.0.1 DMG launch crash on some machines.** Likely a bundle-ID resource path issue from the `SubwayBar → Arrival` rename (`Arrival_Arrival.bundle`). The build-from-source instructions above work reliably. A fixed DMG is a rebuild away but isn't currently scheduled.
 
 ## Tech stack
 
