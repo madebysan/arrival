@@ -40,7 +40,7 @@ Arrival does not knowingly collect any data from anyone. There is no signup. The
 
 ## Changes to this policy
 
-If this policy ever changes, the updated version will be committed to the public repository at github.com/madebysan/arrival-ios with a clear changelog entry. The "Last updated" date at the top of this file will reflect the change.
+The current version of this policy lives at [santiagoalonso.com/arrival/privacy](https://santiagoalonso.com/arrival/privacy). If it changes, the "Last updated" date there will reflect it.
 
 ## Contact
 
