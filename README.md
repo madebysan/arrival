@@ -5,9 +5,20 @@
 <p>Real-time NYC subway arrivals on your iPhone and in your Mac menu bar.<br>
 Never miss your train.</p>
 
+<p><strong>iPhone 1.0</strong> · iOS 17+ · <strong>Mac 1.0.2</strong> · macOS 13+</p>
+
+<p>
+  <img src="https://img.shields.io/badge/Swift-f05138" alt="Swift">
+  <img src="https://img.shields.io/badge/SwiftUI-0066cc" alt="SwiftUI">
+  <img src="https://img.shields.io/badge/WidgetKit-0066cc" alt="WidgetKit">
+  <img src="https://img.shields.io/badge/MenuBarExtra-0066cc" alt="MenuBarExtra">
+</p>
+
 <p>
   <a href="https://apps.apple.com/us/app/arrival-nyc-subway/id6759941751"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" height="50"></a>
 </p>
+
+<p><a href="https://github.com/madebysan/arrival/releases/latest">Download Arrival for Mac</a></p>
 
 ![Arrival for iOS showing live subway arrivals and home screen widgets](ios/assets/screenshot.png)
 
