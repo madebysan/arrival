@@ -29,6 +29,7 @@ mkdir -p "$APP/Contents/MacOS" "$APP/Contents/Resources"
 cp "$BIN_DIR/$APP_NAME" "$APP/Contents/MacOS/$APP_NAME"
 cp Sources/Arrival/Info.plist "$APP/Contents/Info.plist"
 cp Resources/AppIcon.icns "$APP/Contents/Resources/AppIcon.icns"
+cp ../THIRD_PARTY_NOTICES.md "$APP/Contents/Resources/"
 # The station list ships in SwiftPM's resource bundle; StationStore looks for it here
 cp -R "$BIN_DIR/${APP_NAME}_${APP_NAME}.bundle" "$APP/Contents/Resources/"
 
@@ -53,6 +54,7 @@ echo "==> Creating DMG"
 STAGING="$(mktemp -d)"
 cp -R "$APP" "$STAGING/"
 ln -s /Applications "$STAGING/Applications"
+cp ../THIRD_PARTY_NOTICES.md "$STAGING/"
 hdiutil create -volname "$APP_NAME" -srcfolder "$STAGING" -ov -format UDZO "$DMG" > /dev/null
 rm -rf "$STAGING"
 

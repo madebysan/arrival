@@ -42,6 +42,6 @@ Privacy policy: [santiagoalonso.com/arrival/privacy](https://santiagoalonso.com/
 
 ## License
 
-[MIT](LICENSE)
+[MIT](LICENSE). Open-source components and their licenses are listed in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
 Made by [santiagoalonso.com](https://santiagoalonso.com)
