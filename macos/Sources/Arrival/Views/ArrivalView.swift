@@ -258,6 +258,14 @@ struct ArrivalView: View {
             }
             .buttonStyle(.plain)
 
+            Button("Updates") {
+                Updates.check()
+            }
+            .font(.caption2)
+            .buttonStyle(.plain)
+            .foregroundColor(.secondary)
+            .help("Check for Updates")
+
             Button("Quit") {
                 NSApplication.shared.terminate(nil)
             }

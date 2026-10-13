@@ -4,6 +4,10 @@ import SwiftUI
 struct ArrivalApp: App {
     @ObservedObject private var settings = SettingsManager.shared
 
+    init() {
+        Updates.start()
+    }
+
     var body: some Scene {
         MenuBarExtra {
             ContentSwitcher()

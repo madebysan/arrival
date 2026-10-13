@@ -22,5 +22,11 @@
     <string>1.0.2</string>
     <key>LSMinimumSystemVersion</key>
     <string>13.0</string>
+    <key>SUFeedURL</key>
+    <string>https://github.com/madebysan/arrival/releases/latest/download/appcast.xml</string>
+    <key>SUPublicEDKey</key>
+    <string>UAKRJmeYrucyUDj6yLMjYEKfKXE+M4iLxw7qKBrV8yU=</string>
+    <key>SUEnableAutomaticChecks</key>
+    <true/>
 </dict>
 </plist>

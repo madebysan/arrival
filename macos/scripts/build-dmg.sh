@@ -34,8 +34,19 @@ cp -R "$BIN_DIR/${APP_NAME}_${APP_NAME}.bundle" "$APP/Contents/Resources/"
 
 echo "==> Architectures: $(lipo -archs "$APP/Contents/MacOS/$APP_NAME")"
 
+# Embed Sparkle, the in-app updater. ditto keeps the framework's symlinks intact.
+mkdir -p "$APP/Contents/Frameworks"
+ditto "$BIN_DIR/Sparkle.framework" "$APP/Contents/Frameworks/Sparkle.framework"
+
 echo "==> Signing app"
-codesign --force --deep --options runtime --timestamp --sign "$SIGN_IDENTITY" "$APP"
+# Sparkle's nested code inside-out first, then the app, without --deep.
+FW="$APP/Contents/Frameworks/Sparkle.framework"
+codesign -f -o runtime --timestamp -s "$SIGN_IDENTITY" "$FW/Versions/B/XPCServices/Installer.xpc"
+codesign -f -o runtime --timestamp --preserve-metadata=entitlements -s "$SIGN_IDENTITY" "$FW/Versions/B/XPCServices/Downloader.xpc"
+codesign -f -o runtime --timestamp -s "$SIGN_IDENTITY" "$FW/Versions/B/Autoupdate"
+codesign -f -o runtime --timestamp -s "$SIGN_IDENTITY" "$FW/Versions/B/Updater.app"
+codesign -f -o runtime --timestamp -s "$SIGN_IDENTITY" "$FW"
+codesign --force --options runtime --timestamp --sign "$SIGN_IDENTITY" "$APP"
 codesign --verify --deep --strict "$APP"
 
 echo "==> Creating DMG"
