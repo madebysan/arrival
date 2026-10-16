@@ -27,6 +27,8 @@
 		A1000010 /* gtfs-realtime.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000010 /* gtfs-realtime.pb.swift */; };
 		A1000011 /* nyct-subway.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000011 /* nyct-subway.pb.swift */; };
 		A1000012 /* stops.txt in Resources */ = {isa = PBXBuildFile; fileRef = B1000012 /* stops.txt */; };
+		P2000001 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = P1000001 /* PrivacyInfo.xcprivacy */; };
+		P2000002 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = P1000002 /* PrivacyInfo.xcprivacy */; };
 		A1000013 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1000013 /* Assets.xcassets */; };
 		W1000001 /* ArrivalWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = W2000001 /* ArrivalWidget.swift */; };
 		W1000002 /* ArrivalTimelineProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = W2000002 /* ArrivalTimelineProvider.swift */; };
@@ -104,6 +106,8 @@
 		W2000004 /* SelectStopIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectStopIntent.swift; sourceTree = "<group>"; };
 		W2000005 /* ArrivaliOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ArrivaliOS.entitlements; sourceTree = "<group>"; };
 		W2000006 /* ArrivalWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ArrivalWidgetExtension.entitlements; sourceTree = "<group>"; };
+		P1000001 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		P1000002 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		W2000007 /* ArrivalWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ArrivalWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		W2000008 /* AppIntents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppIntents.framework; path = System/Library/Frameworks/AppIntents.framework; sourceTree = SDKROOT; };
 		W2000009 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -156,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				W2000005 /* ArrivaliOS.entitlements */,
+				P1000001 /* PrivacyInfo.xcprivacy */,
 				B1000001 /* ArrivalApp.swift */,
 				E1000003 /* Models */,
 				E1000004 /* Services */,
@@ -242,6 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				W2000006 /* ArrivalWidgetExtension.entitlements */,
+				P1000002 /* PrivacyInfo.xcprivacy */,
 				W2000001 /* ArrivalWidget.swift */,
 				W2000002 /* ArrivalTimelineProvider.swift */,
 				W2000003 /* ArrivalWidgetViews.swift */,
@@ -342,6 +348,7 @@
 			files = (
 				A1000012 /* stops.txt in Resources */,
 				A1000013 /* Assets.xcassets in Resources */,
+				P2000001 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,6 +357,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				W1000016 /* stops.txt in Resources */,
+				P2000002 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
