@@ -3,7 +3,7 @@
 <h1>Arrival</h1>
 
 <p>Real-time NYC subway arrivals on your iPhone and in your Mac menu bar.<br>
-Never miss your train.</p>
+A widget that shows which train you can still catch.</p>
 
 <p><strong>iPhone 1.0</strong> · iOS 17+ · <strong>Mac 1.0.2</strong> · macOS 13+</p>
 
@@ -22,28 +22,32 @@ Never miss your train.</p>
 
 ![Arrival for iOS showing live subway arrivals and home screen widgets](ios/assets/screenshot.png)
 
-I commute the same route every day. The only thing I actually need is when is the next train at my stop, on my line, going my direction.
+I commute the same route every day, and the only thing I need is when the next train comes to my stop, on my line, in my direction. Arrival answers that and nothing else.
 
-Arrival is a home screen widget that shows which train you can still catch, given your walk, and the same countdown in your Mac menu bar.
+- The widget counts in your walk, so it shows trains you can still make.
+- The Mac menu bar shows the same countdown with a colored line bullet.
+- Every line and about 496 stations, straight from the MTA's live feeds.
 
 ## Apps
 
-| App | What it does | Get it |
-| --- | --- | --- |
-| [Arrival for iOS](ios/) | Up to four saved stops, walking times, and home screen widgets that show the next trains you can still catch. iOS 17+. | [App Store](https://apps.apple.com/us/app/arrival-nyc-subway/id6759941751) |
-| [Arrival for macOS](macos/) | A colored subway bullet in the menu bar. Click it for live countdowns and service alerts. macOS 13+. | [Latest release](https://github.com/madebysan/arrival/releases/latest) |
+**[Arrival for iOS](ios/)** saves up to four stops with walking times and puts the next catchable trains on your home screen. iOS 17 or later, on the [App Store](https://apps.apple.com/us/app/arrival-nyc-subway/id6759941751).
 
-Both apps cover every subway line and roughly 496 stations. Data comes from the MTA's free [GTFS-Realtime feeds](https://api.mta.info/), the same source used by the countdown clocks in stations. No account, no analytics, no server.
+**[Arrival for macOS](macos/)** puts a subway bullet in the menu bar; click it for live countdowns and service alerts. macOS 13 or later, from the [latest release](https://github.com/madebysan/arrival/releases/latest).
 
-## Repository layout
+## How it works
 
-- [`ios/`](ios/): SwiftUI app with WidgetKit and AppIntents widgets. Open `ArrivaliOS.xcodeproj` in Xcode 16+.
-- [`macos/`](macos/): Swift package for the `MenuBarExtra` app. Run `swift build -c release` inside `macos/`.
+Both apps read the MTA's free [GTFS-Realtime feeds](https://api.mta.info/), the same data behind the countdown clocks in stations.
 
-Privacy policy: [santiagoalonso.com/arrival/privacy](https://santiagoalonso.com/arrival/privacy)
+## Privacy
 
-## License
+No account, analytics or server: the apps talk to the MTA feeds directly. The privacy policy is at [santiagoalonso.com/arrival/privacy](https://santiagoalonso.com/arrival/privacy).
 
-[MIT](LICENSE). Open-source components and their licenses are listed in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+## Install
+
+Get the iPhone app from the App Store and the Mac app from Releases. To build them: open `ios/ArrivaliOS.xcodeproj` in Xcode 16 or later, or run `swift build -c release` inside `macos/`.
+
+---
+
+[MIT](LICENSE). Third-party components and their licenses are listed in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
 Made by [santiagoalonso.com](https://santiagoalonso.com)
