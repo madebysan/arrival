@@ -24,6 +24,8 @@ Never miss your train.</p>
 
 I commute the same route every day. The only thing I actually need is when is the next train at my stop, on my line, going my direction.
 
+Arrival is a home screen widget that shows which train you can still catch, given your walk, and the same countdown in your Mac menu bar.
+
 ## Apps
 
 | App | What it does | Get it |
