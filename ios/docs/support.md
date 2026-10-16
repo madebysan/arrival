@@ -26,13 +26,9 @@ Arrival fetches new data every 60 seconds while the app is open. If you're under
 
 Tap the **+** button on the home screen, search for a station name (or browse by line), pick the platform direction, and tap Save. The station now lives on your home screen with live arrivals.
 
-### How do I reorder my stations?
-
-Long-press a station card and drag it to a new position.
-
 ### How do I delete a station?
 
-Swipe left on the station card and tap Delete. You can also tap and hold to enter edit mode.
+Touch and hold the station card, then tap Remove Stop.
 
 ### Is there a home screen widget?
 
