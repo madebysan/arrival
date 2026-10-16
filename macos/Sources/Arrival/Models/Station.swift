@@ -9,23 +9,6 @@ struct Station: Identifiable, Hashable {
     let northStopID: String? // Platform stop for northbound (e.g., "F25N")
     let southStopID: String? // Platform stop for southbound (e.g., "F25S")
 
-    // The route prefix derived from the stop_id
-    // e.g., "F25" -> "F", "101" -> "1", "A31" -> "A"
-    var routePrefix: String {
-        // Stop IDs like "101" -> route "1", "201" -> route "2"
-        // Stop IDs like "A31" -> route "A", "F25" -> route "F"
-        let id = self.id
-        if let first = id.first {
-            if first.isLetter {
-                return String(first)
-            } else {
-                // Numeric prefix: first digit maps to route
-                return String(first)
-            }
-        }
-        return ""
-    }
-
     // Infer the routes that likely serve this station based on the stop_id prefix
     var inferredRoutes: [String] {
         return StopIDRouteMapper.routes(forStopID: id)
