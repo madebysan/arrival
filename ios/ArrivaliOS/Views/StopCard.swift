@@ -8,6 +8,7 @@ struct StopCard: View {
     @State private var isLoading = false
     @State private var errorMessage: String?
     @State private var lastFetched: Date?
+    @State private var alertsExpanded = false
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -29,8 +30,8 @@ struct StopCard: View {
             }
 
             // Alert banner (if any)
-            if let alert = alerts.first {
-                alertBanner(alert)
+            if !alerts.isEmpty {
+                alertBanner
             }
 
             // Last synced
@@ -134,19 +135,62 @@ struct StopCard: View {
 
     // MARK: - Alert
 
-    private func alertBanner(_ alert: ServiceAlert) -> some View {
-        HStack(alignment: .top, spacing: 6) {
-            Image(systemName: "exclamationmark.triangle.fill")
-                .foregroundStyle(.orange)
-                .font(.caption)
+    // Collapsed: first alert's headline. Tap to show every alert in full.
+    private var alertBanner: some View {
+        Button {
+            withAnimation(.easeInOut(duration: 0.2)) { alertsExpanded.toggle() }
+        } label: {
+            HStack(alignment: .top, spacing: 6) {
+                Image(systemName: "exclamationmark.triangle.fill")
+                    .foregroundStyle(.orange)
+                    .font(.caption)
+
+                VStack(alignment: .leading, spacing: 10) {
+                    if alertsExpanded {
+                        ForEach(alerts) { alert in
+                            alertText(alert)
+                        }
+                    } else if let alert = alerts.first {
+                        Text(alert.headerText)
+                            .font(.caption)
+                            .lineLimit(2)
+                        if alerts.count > 1 {
+                            Text("+\(alerts.count - 1) more")
+                                .font(.caption2)
+                                .foregroundStyle(.secondary)
+                        }
+                    }
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .multilineTextAlignment(.leading)
+
+                Image(systemName: "chevron.down")
+                    .font(.caption2.weight(.semibold))
+                    .foregroundStyle(.secondary)
+                    .rotationEffect(.degrees(alertsExpanded ? 180 : 0))
+            }
+            .padding(.horizontal, 16)
+            .padding(.vertical, 8)
+            .background(Color.orange.opacity(0.1))
+            .contentShape(Rectangle())
+        }
+        .buttonStyle(.plain)
+        .accessibilityHint(alertsExpanded ? "Collapses the service alerts" : "Shows the full service alerts")
+    }
+
+    private func alertText(_ alert: ServiceAlert) -> some View {
+        VStack(alignment: .leading, spacing: 4) {
             Text(alert.headerText)
                 .font(.caption)
-                .lineLimit(2)
+                .fontWeight(.semibold)
+            let description = alert.descriptionText.trimmingCharacters(in: .whitespacesAndNewlines)
+            if !description.isEmpty && description != alert.headerText {
+                Text(description)
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+            }
         }
-        .padding(.horizontal, 16)
-        .padding(.vertical, 8)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .background(Color.orange.opacity(0.1))
+        .fixedSize(horizontal: false, vertical: true)
     }
 
     // MARK: - States

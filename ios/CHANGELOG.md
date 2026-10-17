@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Service alerts now expand: tap the banner on a stop to read the full MTA notice and any other alerts for that line, instead of a headline cut off after two lines. The Mac menu bar app does the same on click, scrolling long notices.
+
 - Added privacy manifests to the app and the widget. Both declare UserDefaults use (the app's own settings and the App Group shared with the widget), no tracking and no data collected, which App Store Connect requires for new uploads.
 
 ## 1.0 (2026-05-01)

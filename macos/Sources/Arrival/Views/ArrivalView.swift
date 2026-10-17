@@ -8,6 +8,8 @@ struct ArrivalView: View {
     @State private var isLoading = false
     @State private var errorMessage: String?
     @State private var lastUpdated: Date?
+    @State private var alertsExpanded = false
+    @State private var expandedAlertsHeight: CGFloat = 0
 
     var onOpenSettings: () -> Void
 
@@ -159,23 +161,85 @@ struct ArrivalView: View {
 
     // MARK: - Alerts
 
+    // Collapsed: each alert's headline. Click to show every alert in full.
+    // The text is measured while collapsed, so the popover grows to the right
+    // height in one step instead of resizing after the content has already moved.
     private var alertsSection: some View {
-        VStack(alignment: .leading, spacing: 4) {
+        Button {
+            alertsExpanded.toggle()
+        } label: {
+            HStack(alignment: .top, spacing: 6) {
+                Image(systemName: "exclamationmark.triangle.fill")
+                    .foregroundColor(.orange)
+                    .font(.caption)
+
+                Group {
+                    if alertsExpanded {
+                        ScrollView {
+                            expandedAlerts
+                        }
+                        .frame(height: min(expandedAlertsHeight, maxExpandedAlertsHeight))
+                    } else {
+                        VStack(alignment: .leading, spacing: 6) {
+                            ForEach(alerts) { alert in
+                                Text(alert.headerText)
+                                    .font(.caption)
+                                    .foregroundColor(.primary)
+                                    .lineLimit(3)
+                            }
+                        }
+                    }
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .multilineTextAlignment(.leading)
+                .background(alignment: .top) {
+                    // Invisible copy of the expanded text, laid out at the same width
+                    expandedAlerts
+                        .fixedSize(horizontal: false, vertical: true)
+                        .background(GeometryReader { proxy in
+                            Color.clear.preference(key: AlertsHeightKey.self, value: proxy.size.height)
+                        })
+                        .hidden()
+                }
+                .onPreferenceChange(AlertsHeightKey.self) { expandedAlertsHeight = $0 }
+
+                Image(systemName: alertsExpanded ? "chevron.up" : "chevron.down")
+                    .font(.caption2.weight(.semibold))
+                    .foregroundColor(.secondary)
+            }
+            .padding(.horizontal, 12)
+            .padding(.vertical, 8)
+            .contentShape(Rectangle())
+        }
+        .buttonStyle(.plain)
+        .help(alertsExpanded ? "Hide alert details" : "Show full alerts")
+    }
+
+    // Leaves room for the header, arrivals and footer on the screen the popover opens on
+    private var maxExpandedAlertsHeight: CGFloat {
+        let screenHeight = NSScreen.main?.visibleFrame.height ?? 800
+        return min(max(screenHeight - 320, 240), 640)
+    }
+
+    private var expandedAlerts: some View {
+        VStack(alignment: .leading, spacing: 10) {
             ForEach(alerts) { alert in
-                HStack(alignment: .top, spacing: 6) {
-                    Image(systemName: "exclamationmark.triangle.fill")
-                        .foregroundColor(.orange)
-                        .font(.caption)
+                VStack(alignment: .leading, spacing: 4) {
                     Text(alert.headerText)
                         .font(.caption)
+                        .fontWeight(.semibold)
                         .foregroundColor(.primary)
-                        .lineLimit(3)
+                    let description = alert.descriptionText.trimmingCharacters(in: .whitespacesAndNewlines)
+                    if !description.isEmpty && description != alert.headerText {
+                        Text(description)
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                    }
                 }
-                .padding(.horizontal, 12)
-                .padding(.vertical, 4)
+                .fixedSize(horizontal: false, vertical: true)
             }
         }
-        .padding(.vertical, 4)
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 
     private var goodServiceBanner: some View {
@@ -325,5 +389,13 @@ struct ArrivalView: View {
                 self.alerts = []
             }
         }
+    }
+}
+
+// Measures the expanded alert text so its scroll area only grows as tall as needed
+private struct AlertsHeightKey: PreferenceKey {
+    static var defaultValue: CGFloat = 0
+    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
+        value = max(value, nextValue())
     }
 }
