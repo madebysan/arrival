@@ -5,7 +5,7 @@
 <p>Real-time NYC subway arrivals in your menu bar.<br>
 Never miss your train.</p>
 
-<p><strong>Version 1.0.2</strong> · macOS 13+ · Apple Silicon & Intel</p>
+<p><strong>Version 1.1</strong> · macOS 13+ · Apple Silicon & Intel</p>
 
 <p>
   <img src="https://img.shields.io/badge/Swift-f05138" alt="Swift">
