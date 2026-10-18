@@ -1,6 +1,6 @@
 <p><img src="assets/app-icon.png" width="128" height="128" alt="Arrival app icon"></p>
 
-<h1>Arrival for iOS</h1>
+<h1>Arrival for iPhone</h1>
 
 <p>Real-time NYC subway arrivals on your iPhone.<br>
 Never miss your train.</p>
@@ -18,9 +18,9 @@ Never miss your train.</p>
   <a href="https://apps.apple.com/us/app/arrival-nyc-subway/id6759941751"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" height="50"></a>
 </p>
 
-<p>Also available for <a href="../macos/">macOS</a></p>
+<p>Also available for <a href="../macos/">Mac</a></p>
 
-![Arrival iOS app showing live subway arrivals and home screen widgets](assets/screenshot.png)
+![Arrival iPhone app showing live subway arrivals and home screen widgets](assets/screenshot.png)
 
 I commute the same route every day. The only thing I actually need is when is the next train at my stop, on my line, going my direction. The home screen widget does most of the work. Glance at your phone, see the next three trains, walk out of your apartment if one is still catchable. When you need more detail, open the app for service alerts and longer countdowns.
 

@@ -1,6 +1,6 @@
 <p><img src="assets/app-icon.png" width="128" height="128" alt="Arrival app icon"></p>
 
-<h1>Arrival for macOS</h1>
+<h1>Arrival for Mac</h1>
 
 <p>Real-time NYC subway arrivals in your menu bar.<br>
 Never miss your train.</p>
@@ -16,13 +16,13 @@ Never miss your train.</p>
 
 <p><a href="https://github.com/madebysan/arrival/releases/latest">Download Arrival</a></p>
 
-<p>Also available for <a href="../ios/">iOS</a></p>
+<p>Also available for <a href="../ios/">iPhone</a></p>
 
 ![Arrival app showing line picker, direction picker, station picker, and live arrivals](assets/screenshot-v2.png)
 
 I commute the same route every day. The only thing I actually need is when is the next train at my stop, on my line, going my direction. Colored subway bullet in the menu bar. Click it, see the next trains. Close it, back to work.
 
-![Arrival for iOS showing live subway arrivals and home screen widgets](../ios/assets/screenshot.png)
+![Arrival for iPhone showing live subway arrivals and home screen widgets](../ios/assets/screenshot.png)
 
 ## How it works
 

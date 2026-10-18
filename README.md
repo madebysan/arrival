@@ -20,7 +20,7 @@ A widget that shows which train you can still catch.</p>
 
 <p><a href="https://github.com/madebysan/arrival/releases/latest">Download Arrival for Mac</a></p>
 
-![Arrival for iOS showing live subway arrivals and home screen widgets](ios/assets/screenshot.png)
+![Arrival for iPhone showing live subway arrivals and home screen widgets](ios/assets/screenshot.png)
 
 I commute the same route every day, and the only thing I need is when the next train comes to my stop, on my line, in my direction. Arrival answers that and nothing else.
 
@@ -30,9 +30,9 @@ I commute the same route every day, and the only thing I need is when the next t
 
 ## Apps
 
-**[Arrival for iOS](ios/)** saves up to four stops with walking times and puts the next catchable trains on your home screen. iOS 17 or later, on the [App Store](https://apps.apple.com/us/app/arrival-nyc-subway/id6759941751).
+**[Arrival for iPhone](ios/)** saves up to four stops with walking times and puts the next catchable trains on your home screen. iOS 17 or later, on the [App Store](https://apps.apple.com/us/app/arrival-nyc-subway/id6759941751).
 
-**[Arrival for macOS](macos/)** puts a subway bullet in the menu bar; click it for live countdowns and service alerts. macOS 13 or later, from the [latest release](https://github.com/madebysan/arrival/releases/latest).
+**[Arrival for Mac](macos/)** puts a subway bullet in the menu bar; click it for live countdowns and service alerts. macOS 13 or later, from the [latest release](https://github.com/madebysan/arrival/releases/latest).
 
 ## How it works
 
