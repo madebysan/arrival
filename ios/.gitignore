@@ -13,19 +13,12 @@ DerivedData/
 *.swp
 *~
 
-# Local-only
-plan.md
-backlog.md
-notes.md
-IDEAS.md
-
 # Build artifacts
 build/
 *.ipa
 *.dSYM.zip
 *.xcarchive
 
-# API keys (paranoia — keys live in ~/private_keys/, never let one slip into a repo)
+# API keys
 *.p8
 api_key.json
-
